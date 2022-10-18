@@ -1,81 +1,69 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
+
 using namespace std;
 
-
-// for printing array
-void printArray(vector<int> v){ // since vector is passed without reference therefore copying of vector is happening //O(n)
-  
-
-for(auto &val:v){   //O(n)
-
-    cout<<val<<" "; 
+void printArray(vector<int> &v)
+{
+    for (int i = 0; i < v.size(); i++)
+    {
+        cout<<v[i]<<" ";
+    }
+    cout<<endl;
 }
 
-cout<<endl;
+int partition(vector<int> &v, int low, int high)
+{
+    int pivot = v[low];
+    int i = low + 1;
+    int j = high;
+    int temp;
 
+    do
+    {
+        while (v[i] <= pivot) // searching for greater element
+        {
+            i++;
+        }
 
+        while (v[j] > pivot) //searching for smaller element
+        {
+            j--;
+        }
+
+        if (i < j)  // if after searching both greater and smaller i<j then swap elements at i and j
+        {
+            temp = v[i];
+            v[i] = v[j];
+            v[j] = temp;
+        }
+    } while (i < j); // we stop when j becomes less than i
+
+    // Swap v[low] and v[j]   then we swap pivot(v[low]) and lement at j
+    temp = v[low];
+    v[low] = v[j];
+    v[j] = temp;
+    return j;  // returning the index(indication correct position of pivot element in sorted array)
 }
 
-void quickSort(vector<int> &v){
+void quickSort(vector<int> &v, int low, int high)
+{
+    int partitionIndex; // Index of pivot after partition
 
-int maxi=INT_MIN;
-
-for(auto &val:v){
-
-  maxi=max(maxi,val); // max num from entire v 
-
+    if (low < high)  
+    {
+        partitionIndex = partition(v, low, high); 
+        quickSort(v, low, partitionIndex - 1);  // sort left subarray 
+        quickSort(v, partitionIndex + 1, high); // sort right subarray
+    }
 }
 
-// we have maximum no now
-
-vector<int>countArray(maxi+1); // a new array til index of max element filled with 0s
-
-for(auto &val:v){
-   
-   countArray[val]++; //increment in count according to nums present in v
-
-}
-
-
-int k=0; //counter for refilling elements in v
-
-for(int i=0;i<countArray.size();i++){
-   
-   if(countArray[i]==0){ // if 0 then simply move ahead
-    continue;
-   }
-   else{
-
-     while(countArray[i]>0){  // we fill elements till 0 is reached
-
-       // temp.push_back(i);
-        v[k]=i;
-        k++;
-        countArray[i]--;
-
-      }
-
-     }
-
-}
-
-
-
-
-
-}
-
-int main(){
-
-
-vector<int>v={67,45,3,12,90}; //O(1)
-
-printArray(v);//O1
-
-quickSort(v);//O1
-
-printArray(v);//O1
-
-
-return 0;
+int main()
+{
+    
+    vector<int>v = {9, 4, 4, 8, 7, 5, 6};
+    printArray(v);
+    int n=v.size();
+    quickSort(v, 0,n - 1);
+    printArray(v);
+    return 0;
 }
