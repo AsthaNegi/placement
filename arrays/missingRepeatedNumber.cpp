@@ -243,6 +243,8 @@ int main(){
 
  vector<int>v=missing_repeated_number(b);
 
+ // XOR approach is not understood
+
  printVector(v);
 
 return 0;
