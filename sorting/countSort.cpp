@@ -16,7 +16,7 @@ cout<<endl;
 
 }
 
-void quickSort(vector<int> &v){
+void countSort(vector<int> &v){
 
 int maxi=INT_MIN;
 
@@ -61,9 +61,10 @@ for(int i=0;i<countArray.size();i++){
 
 
 
-
-
 }
+
+
+
 
 int main(){
 
@@ -72,7 +73,7 @@ vector<int>v={67,45,3,12,90}; //O(1)
 
 printArray(v);//O1
 
-quickSort(v);//O1
+countSort(v);//O1
 
 printArray(v);//O1
 
