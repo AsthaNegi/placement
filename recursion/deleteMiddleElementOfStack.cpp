@@ -30,7 +30,7 @@ void del(stack<int> &s,int k){
     
     s.pop();
     
-    del(s,k-1);
+    del(s,k-1);  // calling same function with smaller input
     
     
     //induction

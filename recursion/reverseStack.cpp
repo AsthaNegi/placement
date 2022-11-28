@@ -42,9 +42,9 @@ void rev(stack<int> &s){
     
     //base
     
-    if(s.size()==0){
+    if(s.size()==1){ 
         
-       return; // when stack is empty , stop!!
+       return; // when stack is already reversed , stop!!
     }
     
     //hypo
@@ -55,7 +55,7 @@ void rev(stack<int> &s){
     
     rev(s);// calling for smaller input
     
-    
+     
     
     //induction
     
