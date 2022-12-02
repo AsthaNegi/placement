@@ -40,7 +40,7 @@ void solve(char src,char dest,char help,int n,int &count){
 
 int main()
 {
-    int n=3,count=0;  
+    int n=5,count=0;  
     
     solve('a','c','b',n,count);
     

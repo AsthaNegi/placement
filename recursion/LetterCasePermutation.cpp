@@ -1,3 +1,12 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+
+
+return 0;
+}
+
 void solve(string op,string ip,vector<string> &v){
         
       
