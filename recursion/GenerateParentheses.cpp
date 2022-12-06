@@ -6,7 +6,7 @@ int main(){
 
 return 0;
 }
-   
+
 void solve(int open,int close, string op, vector<string> &v){
     
     // base
@@ -19,7 +19,7 @@ void solve(int open,int close, string op, vector<string> &v){
         return;
         
     }
-    
+      
     
     if( open!=0){
         
@@ -55,7 +55,7 @@ void solve(int open,int close, string op, vector<string> &v){
     
     return;
 }
-
+ 
     
     
     

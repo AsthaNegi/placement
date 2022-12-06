@@ -36,9 +36,10 @@ void solve(vector<int> v,int k,int index,int &ans ){
 
 int main()
 {
-    int n;
+      int n;
     cin>>n;
     int k;
+    
     cin>>k;
     
     vector<int>v;

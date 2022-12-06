@@ -40,7 +40,7 @@ void solve(int n,string op,int one,int zero){
       solve(n-1,op2,one,zero+1);
       
       
-      
+       
   }
  
       
