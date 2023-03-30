@@ -33,7 +33,17 @@ bool isPalindrome(string S)
 }//function ends
 
 
+bool isPalindrome2(int i,string &s){
 
+if(i>=s.size()/2){
+	return true;
+}
+
+if(s[i]!=s[s.size()-i-1]) return false;
+	
+return isPalindrome2(i+1,s);
+
+}
 
 int main(){
 
